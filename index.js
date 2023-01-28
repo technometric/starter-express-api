@@ -41,18 +41,22 @@ app.post("/sms", function (req, res) {
   id = req.body["id"];
   msg = req.body["msg"];
   sendWA(id, msg);
-  console.log(msg);
   res.send("Kirim WA " + id + ": " + msg + " berhasil");
 });
 
 function sendWA(id, msg) {
-  client.messages
-    .create({
-      from: "whatsapp:+14155238886",
-      body: msg,
-      to: "whatsapp:+62" + id,
-    })
-    .then((message) => console.log(message.sid));
+  console.log(id + " : " + msg);
+  try {
+    client.messages
+      .create({
+        from: "whatsapp:+14155238886",
+        body: msg,
+        to: "whatsapp:+62" + id,
+      })
+      .then((message) => console.log(message.sid));
+  } catch (error) {
+    console.log(error);
+  }
 }
 app.listen(process.env.PORT || port, () =>
   console.log(`Listening on port ${port}!`)
