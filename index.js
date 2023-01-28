@@ -16,6 +16,14 @@ app.get("/", (req, res) => {
   res.send("Modul akuarium");
 });
 
+app.get("/token", (req, res) => {
+  res.send(authToken);
+});
+
+app.get("/sid", (req, res) => {
+  res.send(accountSid);
+});
+
 app.get("/wa", (req, res) => {
   $no = `whatsapp:+62${req.query.id}`;
   $body = req.query.msg;
