@@ -34,7 +34,7 @@ app.post("/sms", function (req, res) {
   msg = req.body["msg"];
   sendWA(id, msg);
   console.log(msg);
-  res.send("Ok");
+  res.send("Kirim WA " + id + ": " + msg + " berhasil");
 });
 
 function sendWA(id, msg) {
