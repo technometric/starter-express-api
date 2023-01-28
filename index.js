@@ -4,8 +4,8 @@ const express = require("express");
 const app = express();
 const port = 3000;
 
-const accountSid = "ACfcaa00d759d31eae8ad395d5f2236319"; // Your Account SID from www.twilio.com/console
-const authToken = "1db304a7ccf54f3646bc937f4b6dc44b"; // Your Auth Token from www.twilio.com/console
+const accountSid = "AC9f65506a49b10d887b708bd19c781b95"; // Your Account SID from www.twilio.com/console
+const authToken = "b7ad10e41197e2ee4a97e4f624498877"; // Your Auth Token from www.twilio.com/console
 const twilio = require("twilio");
 const client = new twilio(accountSid, authToken);
 
