@@ -32,7 +32,7 @@ function kirimWA(body){
       json: true,   
       body: body
   }, function (error, response, body){
-      console.log(body);
+      console.log(error);
   });
 }
 
