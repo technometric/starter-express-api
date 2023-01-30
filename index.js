@@ -10,6 +10,15 @@ app.get("/", (req, res) => {
 });
 
 app.post("/wa", function (req, res) {
+  console.log(req.body)
+  id = req.body["id"];
+  msg = req.body["msg"];
+  kirimWA(req.body);
+  res.send("Kirim WA " + id + ": " + msg + " berhasil");
+});
+
+app.post("/sms", function (req, res) {
+  console.log(req.body)
   id = req.body["id"];
   msg = req.body["msg"];
   kirimWA(req.body);
